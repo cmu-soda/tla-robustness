@@ -1,0 +1,3 @@
+TLA+ Module: CoffeeTeaSmallCorrect
+Diff rep grouped by action:
+CoffeeTeaSmallCorrect is robust against ANY behavior or environment
