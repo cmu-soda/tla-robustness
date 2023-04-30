@@ -48,7 +48,7 @@ Initiate(proc, session) ==
 Authorize(proc, uid, cred, code) == 
     /\ AS_creds[uid] = cred     \* correct credential must be provided
     /\ AS_codes[uid] = code     \* return a unique code for the user with "uid"
-    /\ cred \in knows[proc]     \* "proc" must know "cred"
+ \*   /\ cred \in knows[proc]     \* "proc" must know "cred"
     /\ knows' = [knows EXCEPT ![proc] = knows[proc] \cup {code}]
     /\ UNCHANGED << client_codes, client_tokens, client_sessions, user_session >>
 
@@ -83,6 +83,6 @@ Next ==
 
 =============================================================================
 \* Modification History
-\* Last modified Sun Apr 30 17:10:05 EDT 2023 by eunsukkang
+\* Last modified Sun Apr 30 17:30:26 EDT 2023 by eunsukkang
 \* Created Fri Apr 28 21:00:26 EDT 2023 by eunsukkang
 
