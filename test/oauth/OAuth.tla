@@ -28,12 +28,13 @@ VARIABLE
     user_session,    \* Proc -> Session
     knows            \* Proc -> AuthCode \cup Cred  
     
-TypeOK == /\ client_sessions \in SUBSET Session
-          /\ client_codes \in [Session -> AuthCode \cup {None} ]
-          /\ client_tokens \in [Session -> AccessToken \cup {None} ]
-          /\ user_session \in [Proc -> Session \cup {None}]
-          /\ knows \in [Proc -> SUBSET (AuthCode \cup Cred \cup Session \cup {None})]  
-          
+\*TypeOK == /\ client_sessions \in SUBSET Session
+\*          /\ client_codes \in [Session -> AuthCode \cup {None} ]
+\*          /\ client_tokens \in [Session -> AccessToken \cup {None} ]
+\*          /\ user_session \in [Proc -> Session \cup {None}]
+\*          /\ knows \in [Proc -> SUBSET (AuthCode \cup Cred \cup Session \cup {None})]  
+\*          
+
 \* Helper functions
 Range(f) == {f[x] : x \in DOMAIN f}        
         
@@ -83,6 +84,6 @@ Next ==
 
 =============================================================================
 \* Modification History
-\* Last modified Sun Apr 30 17:30:26 EDT 2023 by eunsukkang
+\* Last modified Mon May 01 15:08:33 EDT 2023 by eunsukkang
 \* Created Fri Apr 28 21:00:26 EDT 2023 by eunsukkang
 
