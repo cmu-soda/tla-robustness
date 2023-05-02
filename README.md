@@ -29,6 +29,7 @@ In this example, we use the following options:
 - The option --cleanup to delete any files or folders the tool creates. This is not required.
 - The option --outdir out to create a folder "out" and store temporary files here. This is required.
 - The option --spec Voting.tla to calculate robustness for Voting.tla. This is required, but different modes are available (see usage).
+
 Using the --spec option (without --spec2 or --compare) will calculate the spec's "robustness".
 In particular, we display the spec's safety boundary to represent the spec's robustness.
 The safety boundary is simply a set of states that can violate the safety property in one step, if the environment makes an appropriate deviation.
@@ -55,5 +56,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 18.0.2.1+1-1, mixed mode, sharing)
 - For formula inference to work, there must be a TypeOK. It must be exactly called "TypeOK".
 - The tool will generate the entire state space in the TypeOK, so if the TypeOK describes an infinite or large number of states then the tool may not terminate.
 - The tool cannot handle the CONSTANT keyword.
-- Formula inference works for state variables with primitive types: Natural, Integer, and String. Formula inference also works for sets of primitives and functions with domain/range of primitives. Unfortunately, sets of sets, functions with sets in the domain/range, etc. are not yet supported.
-- Choosing --spec <spec.tla> assumes there is also a file in the same folder named <spec.cfg>. This assumption can be overriden by explicitly specfying a config file using the --config option.
+- Formula inference works for state variables with primitive types: Natural, Integer, and String.
+Formula inference also works for sets of primitives and functions with domain/range of primitives.
+Unfortunately, sets of sets, functions with sets in the domain/range, etc. are not yet supported.
+- Choosing --spec <spec.tla> assumes there is also a file in the same folder named <spec.cfg>.
+This assumption can be overriden by explicitly specfying a config file using the --config option.
