@@ -61,3 +61,7 @@ Formula inference also works for sets of primitives and functions with domain/ra
 Unfortunately, sets of sets, functions with sets in the domain/range, etc. are not yet supported.
 - Choosing --spec <spec.tla> assumes there is also a file in the same folder named <spec.cfg>.
 This assumption can be overriden by explicitly specfying a config file using the --config option.
+
+
+## Environment Variables
+- TLA_ROBUST_MAX_NEG_EXAMPLES
